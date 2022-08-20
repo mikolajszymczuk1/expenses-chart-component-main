@@ -17,6 +17,7 @@ export default defineConfig({
         additionalData: `
           @use "@/assets/scss/utils/colors" as *;
           @use "@/assets/scss/utils/fonts" as *;
+          @use "@/assets/scss/utils/breakpoints" as *;
         `,
       },
     },

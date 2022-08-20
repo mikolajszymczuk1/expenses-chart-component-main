@@ -1,7 +1,7 @@
 <template>
-  <HelloWorld />
+  <ExpensesChart />
 </template>
 
 <script setup>
-import HelloWorld from '@/components/HelloWorld.vue';
+import ExpensesChart from '@/components/ExpensesChart.vue';
 </script>
