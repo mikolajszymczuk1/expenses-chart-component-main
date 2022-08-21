@@ -35,7 +35,13 @@ const lastMonthPrice = ref(2.4); // In %
     }
 
     &--right {
+      margin-bottom: 5px;
+
       text-align: right;
+
+      @media screen and (min-width: $lg) {
+        margin-bottom: 10px;
+      }
     }
   }
 
