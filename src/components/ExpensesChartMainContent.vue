@@ -1,6 +1,9 @@
 <template>
   <div class="expenses-chart-main-content">
-    <h2 class="expenses-chart-main-content__time-range-info">Spending - Last 7 days</h2>
+    <h2 class="expenses-chart-main-content__time-range-info" data-test="range-time-title">
+      Spending - Last 7 days
+    </h2>
+
     <div class="expenses-chart-main-content__chart">
       <div
         class="expenses-chart-main-content__single-day"
@@ -13,7 +16,9 @@
           :value="dayData.amount"
         />
 
-        <div class="expenses-chart-main-content__day-name">{{ dayData.day }}</div>
+        <div class="expenses-chart-main-content__day-name" data-test="day-name">
+          {{ dayData.day }}
+        </div>
       </div>
     </div>
   </div>

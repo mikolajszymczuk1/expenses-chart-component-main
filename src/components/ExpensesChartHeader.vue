@@ -1,8 +1,8 @@
 <template>
   <div class="expenses-chart-header">
     <div class="expenses-chart-header__wrapper">
-      <h1 class="expenses-chart-header__balance-title">My balance</h1>
-      <h2 class="expenses-chart-header__balance">${{ balance }}</h2>
+      <h1 class="expenses-chart-header__balance-title" data-test="balance-text">My balance</h1>
+      <h2 class="expenses-chart-header__balance" data-test="balance-value">${{ balance }}</h2>
     </div>
 
     <LogoIcon />

@@ -1,13 +1,23 @@
 <template>
   <div class="expenses-chart-summary">
     <div class="expenses-chart-summary__column expenses-chart-summary__column--left">
-      <h3 class="expenses-chart-summary__column-title">Total this month</h3>
-      <p class="expenses-chart-summary__this-month-price">${{ thisMonthPrice }}</p>
+      <h3 class="expenses-chart-summary__column-title" data-test="this-month-text">
+          Total this month
+      </h3>
+
+      <p class="expenses-chart-summary__this-month-price" data-test="this-month-price">
+        ${{ thisMonthPrice }}
+      </p>
     </div>
 
     <div class="expenses-chart-summary__column expenses-chart-summary__column--right">
-      <p class="expenses-chart-summary__last-month-perc">+{{ lastMonthPrice }}%</p>
-      <h3 class="expenses-chart-summary__column-title">from last month</h3>
+      <p class="expenses-chart-summary__last-month-perc" data-test="last-month-prec">
+        +{{ lastMonthPrice }}%
+      </p>
+
+      <h3 class="expenses-chart-summary__column-title" data-test="last-month-text">
+        from last month
+      </h3>
     </div>
   </div>
 </template>

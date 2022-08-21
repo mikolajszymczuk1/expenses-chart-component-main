@@ -3,8 +3,9 @@
     class="expenses-chart-data-bar"
     :class="isMax ? 'expenses-chart-data-bar--max' : ''"
     :style="{ height: `${height}px` }"
+    data-test="data-bar"
   >
-    <div class="expenses-chart-data-bar__popup-box">
+    <div class="expenses-chart-data-bar__popup-box" data-test="bar-value">
       ${{ value }}
     </div>
   </div>
