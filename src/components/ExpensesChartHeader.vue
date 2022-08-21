@@ -30,6 +30,12 @@ const balance = ref(921.48);
 
   font-family: $dm-sans;
 
+  @media screen and (min-width: $lg) {
+    padding: 27px 39px 25px 32px;
+
+    border-radius: 20px;
+  }
+
   &__wrapper {
     color: white;
   }
@@ -39,10 +45,20 @@ const balance = ref(921.48);
 
     font-weight: 400;
     font-size: 0.938rem;
+
+    @media screen and (min-width: $lg) {
+      margin-bottom: 8px;
+
+      font-size: 1.125rem;
+    }
   }
 
   &__balance {
     font-size: 1.5em;
+
+    @media screen and (min-width: $lg) {
+      font-size: 2rem;
+    }
   }
 }
 </style>

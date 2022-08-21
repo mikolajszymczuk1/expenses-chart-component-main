@@ -7,7 +7,11 @@
         v-for="dayData in chartData"
         :key="dayData.day"
       >
-        <ExpensesChartDataBar :height="dayData.amount" />
+        <ExpensesChartDataBar
+          :height="calculateHeight(dayData.amount)"
+          :is-max="isMaximumValue(dayData.amount)"
+        />
+
         <div class="expenses-chart-main-content__day-name">{{ dayData.day }}</div>
       </div>
     </div>
@@ -16,7 +20,22 @@
 
 <script setup>
 import ExpensesChartDataBar from '@/components/ExpensesChartDataBar.vue';
-import chartData from '@/data/data.json';
+
+const props = defineProps({
+  chartData: {
+    required: true,
+    type: Array,
+  },
+});
+
+// Const values
+const CHART_HEIGHT_CONVERTER = 2.864782277;
+
+// Calculate single bar height based on some value
+const calculateHeight = (value) => Math.floor(value * CHART_HEIGHT_CONVERTER);
+
+// Return true if value is maximum value from all days
+const isMaximumValue = (value) => value === Math.max(...props.chartData.map((d) => d.amount));
 </script>
 
 <style lang="scss" scoped>
@@ -28,11 +47,22 @@ import chartData from '@/data/data.json';
 
   font-family: $dm-sans;
 
+  @media screen and (min-width: $lg) {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+  }
+
   &__time-range-info {
     margin-bottom: 52px;
 
     font-size: 1.5rem;
     color: $dark-brown;
+
+    @media screen and (min-width: $lg) {
+      margin-bottom: 66px;
+
+      font-size: 2rem;
+    }
   }
 
   &__chart {
@@ -43,6 +73,10 @@ import chartData from '@/data/data.json';
     @media screen and (min-width: $sm) {
       justify-content: center;
       column-gap: 12px;
+    }
+
+    @media screen and (min-width: $lg) {
+      column-gap: 18px;
     }
   }
 
@@ -57,6 +91,12 @@ import chartData from '@/data/data.json';
 
     font-size: 0.75em;
     color: $medium-brown;
+
+    @media screen and (min-width: $lg) {
+      margin-top: 8px;
+
+      font-size: 0.938rem;
+    }
   }
 }
 </style>

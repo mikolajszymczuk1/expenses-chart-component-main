@@ -43,6 +43,10 @@ const lastMonthPrice = ref(2.4); // In %
     color: $medium-brown;
     font-size: 0.938rem;
     font-weight: 400;
+
+    @media screen and (min-width: $lg) {
+      font-size: 1.125rem;
+    }
   }
 
   &__this-month-price {
@@ -50,11 +54,23 @@ const lastMonthPrice = ref(2.4); // In %
 
     font-weight: 700;
     font-size: 1.875rem;
+
+    @media screen and (min-width: $lg) {
+      margin-top: 1px;
+
+      font-size: 3rem;
+    }
   }
 
   &__last-month-perc {
     font-weight: 700;
     font-size: 0.938rem;
+
+    @media screen and (min-width: $lg) {
+      margin-bottom: 1px;
+
+      font-size: 1.125rem;
+    }
   }
 }
 </style>

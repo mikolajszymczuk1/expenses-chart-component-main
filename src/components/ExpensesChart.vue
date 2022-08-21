@@ -3,7 +3,7 @@
     <ExpensesChartHeader />
 
     <div class="expenses-chart__body">
-      <ExpensesChartMainContent />
+      <ExpensesChartMainContent :chart-data="chartData" />
       <ExpensesChartSummary />
     </div>
   </div>
@@ -13,6 +13,13 @@
 import ExpensesChartHeader from '@/components/ExpensesChartHeader.vue';
 import ExpensesChartMainContent from '@/components/ExpensesChartMainContent.vue';
 import ExpensesChartSummary from '@/components/ExpensesChartSummary.vue';
+
+defineProps({
+  chartData: {
+    required: true,
+    type: Array,
+  },
+});
 </script>
 
 <style lang="scss" scoped>
@@ -21,12 +28,29 @@ import ExpensesChartSummary from '@/components/ExpensesChartSummary.vue';
 
   width: 92%;
 
+  @media screen and (min-width: $md) {
+    width: 60%;
+  }
+
+  @media screen and (min-width: $lg) {
+    margin-bottom: 50px;
+
+    width: 540px;
+  }
+
   &__body {
     margin-top: 16px;
     padding: 24px 20px;
 
     background-color: $card-white;
     border-radius: 10px;
+
+    @media screen and (min-width: $lg) {
+      margin-top: 24px;
+      padding: 32px 40px 40px 40px;
+
+      border-radius: 20px;
+    }
   }
 }
 </style>
