@@ -1,5 +1,7 @@
 <template>
-  <ExpensesChart :chart-data="data" />
+  <main>
+    <ExpensesChart :chart-data="data" />
+  </main>
 </template>
 
 <script setup>
