@@ -10,6 +10,7 @@
         <ExpensesChartDataBar
           :height="calculateHeight(dayData.amount)"
           :is-max="isMaximumValue(dayData.amount)"
+          :value="dayData.amount"
         />
 
         <div class="expenses-chart-main-content__day-name">{{ dayData.day }}</div>

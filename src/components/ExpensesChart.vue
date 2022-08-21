@@ -38,6 +38,16 @@ defineProps({
     width: 540px;
   }
 
+  @media screen and (min-width: $xlg) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin: 0;
+
+    transform: translate(-50%, -50%);
+  }
+
   &__body {
     margin-top: 16px;
     padding: 24px 20px;
